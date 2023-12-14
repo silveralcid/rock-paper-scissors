@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const computerScoreElement = document.getElementById('computerScore');
     const computerChoiceElement = document.getElementById('computerChoice');
     const restartButton = document.getElementById('restartButton');
+    const clickSound = document.getElementById('clickSound'); // Added this line
 
     function typeOutMessage(element, message, index = 0) {
         isTyping = true;
