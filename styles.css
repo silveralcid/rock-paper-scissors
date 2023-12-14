@@ -1,0 +1,71 @@
+/* External CSS (styles.css) */
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px; /* Set the maximum width of the box */
+    margin: 0 auto; /* Center horizontally */
+    border: 2px solid black;
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Center everything inside the game container */
+#gameContainer h1,
+#gameContainer div,
+#gameContainer p,
+#gameContainer button {
+    text-align: center;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+#gameContainer button {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    transition: transform 0.1s; /* Adjust the duration for a faster shake effect */
+    border-radius: 10px; /* Add rounded corners to the buttons */
+}
+
+/* Add a wiggle animation on hover */
+#gameContainer button:hover {
+    animation: wiggle 0.5s ease infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.green-button {
+    background-color: green;
+    color: white;
+}
+
+#playerScore, #computerScore {
+    /* Add appropriate styling here, e.g., font size, color, etc. */
+    font-size: 18px;
+    color: #333;
+    /* Add any other desired styles */
+}
+
+/* Example styles for the container element */
+#scoreboardContainer {
+    /* Add appropriate styles for positioning if needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Add any other desired styles */
+}
+
