@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let playerScore = 0;
     let computerScore = 0;
     let roundsPlayed = 0;
-    let roundsToWin = 3; // Best out of 5 (change this if needed)
+    let roundsToWin = 3; // Best out of 5
     let gameIsOver = false;
     let isTyping = false; // Flag to track if typing animation is in progress
 
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const computerScoreElement = document.getElementById('computerScore');
     const computerChoiceElement = document.getElementById('computerChoice');
     const restartButton = document.getElementById('restartButton');
-    const clickSound = document.getElementById('clickSound'); // Added this line
+    const clickSound = document.getElementById('clickSound');
 
     function typeOutMessage(element, message, index = 0) {
         isTyping = true;
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             element.textContent += message.charAt(index);
             setTimeout(function() {
                 typeOutMessage(element, message, index + 1);
-            }, 45); // Adjust the typing speed (50 milliseconds per character)
+            }, 45);
         } else {
             isTyping = false;
         }
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (gameIsOver) return;
     
         if (isTyping) {
-            // If typing animation is in progress, do not proceed
             return;
         }
     
@@ -66,15 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Listen for the typing animation to complete
         const typingInterval = setInterval(() => {
             if (!isTyping) {
-                // Reset the button color after the typing animation is complete
+
                 clickedButton.classList.remove('green-button');
-                clearInterval(typingInterval); // Stop listening for typing animation
+                clearInterval(typingInterval);
             }
-        }, 100); // Check every 100 milliseconds if typing animation is complete
+        }, 100);
     
         if (roundsPlayed >= roundsToWin) {
-            // Add a delay before showing the final game result
-            setTimeout(endGame, 8000); // Adjust the delay as needed (8 seconds in this example)
+            setTimeout(endGame, 8000);
         }
     }
         
@@ -139,6 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
         playRound('Scissors');
     });
 
-    // Add event listener to the restart button
+
     restartButton.addEventListener('click', restartGame);
 });

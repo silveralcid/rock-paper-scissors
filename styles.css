@@ -18,21 +18,21 @@
 #gameContainer p,
 #gameContainer button {
     text-align: center;
-    margin: 2% 0; /* Use relative margin for better responsiveness */
+    margin: 2% 0; 
 }
 
 h1 {
-    font-size: 2vw; /* Increase font size for better visibility */
+    font-size: 2vw; 
 }
 
 #gameContainer button {
     font-family: 'Fira Code', monospace;
-    font-size: 2vw; /* Increase font size for better visibility */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease; /* Smooth transition */
+    font-size: 2vw; 
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease; 
     border-radius: 10px;
 }
 
-/* Add a wiggle animation on hover */
+
 #gameContainer button:hover {
     animation: wiggle 0.5s ease infinite;
 }
@@ -55,11 +55,11 @@ h1 {
 }
 
 #playerScore, #computerScore {
-    font-size: 2vw; /* Increase font size for better visibility */
+    font-size: 2vw; 
     color: #333;
 }
 
-/* Example styles for the container element */
+
 #scoreboardContainer {
     display: flex;
     justify-content: space-between;
@@ -68,12 +68,12 @@ h1 {
 
 body {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Ensure the body covers the entire viewport height */
-    margin: 0; /* Remove any default margin */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
 }
 
 #roundResult {
-    font-size: 1.5vw; /* Change the font size to your desired value (e.g., 20 pixels) */
+    font-size: 1.5vw;
 }
