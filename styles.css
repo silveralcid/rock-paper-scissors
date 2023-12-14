@@ -1,0 +1,69 @@
+/* External CSS (styles.css) */
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%; /* Set the maximum width to 50% of the parent container (page) */
+    max-height: 50vh; /* Set the maximum height to 50% of the viewport height */
+    border: 2px solid black;
+    padding: 5%; /* Increase the padding for better spacing */
+    font-family: 'Fira Code', monospace;
+    width: 100%; /* Set the width to 100% of the parent container (page) */
+    height: 100%; /* Set the height to 100% of the parent container (page) */
+    overflow: scroll;
+}
+
+/* Center everything inside the game container */
+#gameContainer h1,
+#gameContainer div,
+#gameContainer p,
+#gameContainer button {
+    text-align: center;
+    margin: 2% 0; /* Use relative margin for better responsiveness */
+}
+
+h1 {
+    font-size: 2vw; /* Increase font size for better visibility */
+}
+
+#gameContainer button {
+    font-family: 'Fira Code', monospace;
+    font-size: 2vw; /* Increase font size for better visibility */
+    transition: transform 0.1s;
+    border-radius: 10px;
+}
+
+/* Add a wiggle animation on hover */
+#gameContainer button:hover {
+    animation: wiggle 0.5s ease infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.green-button {
+    background-color: green;
+    color: white;
+}
+
+#playerScore, #computerScore {
+    font-size: 2vw; /* Increase font size for better visibility */
+    color: #333;
+}
+
+/* Example styles for the container element */
+#scoreboardContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

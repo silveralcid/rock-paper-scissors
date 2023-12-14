@@ -26,18 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function playRound(playerChoice) {
         if (gameIsOver) return;
-    
+
         if (isTyping) {
             // If typing animation is in progress, do not proceed
             return;
         }
-    
+
         const choices = ['Rock', 'Paper', 'Scissors'];
         const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    
+
         roundResultElement.textContent = '';
         let roundResult = '';
-    
+
         if (playerChoice === computerChoice) {
             roundResult = `Your Father chose... ${computerChoice}. It's a tie. Not quite good enough as usual...`;
         } else if (
@@ -51,27 +51,27 @@ document.addEventListener('DOMContentLoaded', function() {
             roundResult = `Your Father chose ${computerChoice}. You lose this round and your self-confidence.`;
             computerScore++;
         }
-    
+
         roundsPlayed++;
         roundResultElement.textContent = ''; // Clear the previous message
         typeOutMessage(roundResultElement, roundResult);
-    
+
         updateScoreboard();
-    
+
         if (roundsPlayed >= roundsToWin) {
             // Add a delay before showing the final game result
-            setTimeout(endGame, 8000); // Adjust the delay as needed (8 seconds in this example)
+            setTimeout(endGame, 8000); // Adjust the delay as needed (4 seconds in this example)
         } else {
             // Change the color of the clicked button to green
             const clickedButton = document.getElementById(`${playerChoice.toLowerCase()}Button`);
             clickedButton.classList.add('green-button');
-    
+
             // Reset the button color after a delay (e.g., 1 second)
             setTimeout(() => {
                 clickedButton.classList.remove('green-button');
-            }, 2500);
+            }, 1000);
         }
-    }    
+    }
 
     function updateScoreboard() {
         playerScoreElement.textContent = `Your Score: ${playerScore}`;
@@ -79,11 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function endGame() {
-        if (gameIsOver) return;
-    
         gameIsOver = true;
         let gameResult = '';
-    
+
         if (playerScore > computerScore) {
             gameResult = 'You win. Your father will not leave for milk quite yet.';
         } else if (playerScore < computerScore) {
@@ -91,12 +89,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             gameResult = 'The game ends in a tie. Your Father leaves for milk and cigarettes.';
         }
-    
+
         roundResultElement.textContent = ''; // Clear the previous message
         typeOutMessage(roundResultElement, gameResult);
         restartButton.style.display = 'block'; // Show the restart button
     }
-    
 
     function restartGame() {
         playerScore = 0;
