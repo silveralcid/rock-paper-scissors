@@ -4,11 +4,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw; /* Set the width to 100% of viewport width */
-    height: 100vh; /* Set the height to 100% of viewport height */
+    max-width: 50%; /* Set the maximum width to 50% of the parent container (page) */
+    max-height: 50vh; /* Set the maximum height to 50% of the viewport height */
     border: 2px solid black;
-    padding: 20px;
+    padding: 5%; /* Increase the padding for better spacing */
     font-family: 'Fira Code', monospace;
+    width: 100%; /* Set the width to 100% of the parent container (page) */
+    height: 100%; /* Set the height to 100% of the parent container (page) */
+    overflow: scroll;
 }
 
 /* Center everything inside the game container */
@@ -17,16 +20,16 @@
 #gameContainer p,
 #gameContainer button {
     text-align: center;
-    margin: 5px;
+    margin: 2% 0; /* Use relative margin for better responsiveness */
 }
 
 h1 {
-    font-size: 18px;
+    font-size: 2vw; /* Increase font size for better visibility */
 }
 
 #gameContainer button {
     font-family: 'Fira Code', monospace;
-    font-size: 16px;
+    font-size: 2vw; /* Increase font size for better visibility */
     transition: transform 0.1s;
     border-radius: 10px;
 }
@@ -54,7 +57,7 @@ h1 {
 }
 
 #playerScore, #computerScore {
-    font-size: 18px;
+    font-size: 2vw; /* Increase font size for better visibility */
     color: #333;
 }
 
