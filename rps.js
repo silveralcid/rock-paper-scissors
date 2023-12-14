@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset the button color after a delay (e.g., 1 second)
             setTimeout(() => {
                 clickedButton.classList.remove('green-button');
-            }, 1000);
+            }, 2500);
         }
     }    
 
