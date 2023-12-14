@@ -28,7 +28,7 @@ h1 {
 #gameContainer button {
     font-family: 'Fira Code', monospace;
     font-size: 2vw; /* Increase font size for better visibility */
-    transition: transform 0.1s;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease; /* Smooth transition */
     border-radius: 10px;
 }
 
@@ -64,4 +64,16 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Ensure the body covers the entire viewport height */
+    margin: 0; /* Remove any default margin */
+}
+
+#roundResult {
+    font-size: 1.5vw; /* Change the font size to your desired value (e.g., 20 pixels) */
 }

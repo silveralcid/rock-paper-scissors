@@ -56,22 +56,27 @@ document.addEventListener('DOMContentLoaded', function() {
         roundResultElement.textContent = ''; // Clear the previous message
         typeOutMessage(roundResultElement, roundResult);
     
+        // Change the color of the clicked button to green
+        const clickedButton = document.getElementById(`${playerChoice.toLowerCase()}Button`);
+        clickedButton.classList.add('green-button');
+    
         updateScoreboard();
+    
+        // Listen for the typing animation to complete
+        const typingInterval = setInterval(() => {
+            if (!isTyping) {
+                // Reset the button color after the typing animation is complete
+                clickedButton.classList.remove('green-button');
+                clearInterval(typingInterval); // Stop listening for typing animation
+            }
+        }, 100); // Check every 100 milliseconds if typing animation is complete
     
         if (roundsPlayed >= roundsToWin) {
             // Add a delay before showing the final game result
             setTimeout(endGame, 8000); // Adjust the delay as needed (8 seconds in this example)
-        } else {
-            // Change the color of the clicked button to green
-            const clickedButton = document.getElementById(`${playerChoice.toLowerCase()}Button`);
-            clickedButton.classList.add('green-button');
-    
-            // Reset the button color after a delay (e.g., 1 second)
-            setTimeout(() => {
-                clickedButton.classList.remove('green-button');
-            }, 2500);
         }
-    }    
+    }
+        
 
     function updateScoreboard() {
         playerScoreElement.textContent = `Your Score: ${playerScore}`;
